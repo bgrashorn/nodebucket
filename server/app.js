@@ -1,7 +1,7 @@
 /**
  * Title: app.js
- * Author: Professor Krasso
- * Date: 8/5/2023
+ * Author: Professor Krasso and Brett Grashorn
+ * Date: 8/17/2023
  */
 'use strict'
 

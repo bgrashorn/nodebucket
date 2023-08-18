@@ -1,6 +1,7 @@
 /**
- * Add Attribution
- *
+ * Title: mongo.js
+ * Author: Professor Krasso and Brett Grashorn
+ * Date: 8/17/2023
  */
 
 'use strict'

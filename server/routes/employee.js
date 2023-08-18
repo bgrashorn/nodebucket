@@ -1,5 +1,7 @@
 /**
- *  Attribution
+ * Title: employee.js
+ * Author: Professor Krasso and Brett Grashorn
+ * Date: 8/17/2023
  */
 
 'use strict'
@@ -8,7 +10,7 @@ const express = require('express')
 const router = express.Router()
 const { mongo } = require('../utils/mongo')
 
-/** findEmployeebyId
+/** findEmployeeById
  *  Description: Accept values 1007-1012
  *  localhost:3000/api/employees/1007 - 200: Success
  *  localhost:3000/api/employees/asdf - 400: Bad Request

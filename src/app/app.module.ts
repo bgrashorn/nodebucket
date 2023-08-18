@@ -1,7 +1,7 @@
 /**
  * Title: app.module.ts
- * Author: Professor Krasso
- * Date: 8/5/23
+ * Author: Professor Krasso and Brett Grashorn
+ * Date: 8/17/23
  */
 
 // imports statements
@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
