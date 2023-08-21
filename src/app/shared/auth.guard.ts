@@ -11,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 export const authGuard: CanActivateFn = (route, state) => {
   const cookie = inject(CookieService)
 
+  // logs in user with correct user ID
   if (cookie.get('session_user')) {
     console.log('You are logged in and have a valid session cookie')
     return true

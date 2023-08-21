@@ -17,7 +17,7 @@ const routes: Routes = [
     component: TaskManagementComponent,
     children: [
       {
-        path: 'my-tasks',
+        path: 'my-tasks', // path to tasks
         component: TaskManagementComponent,
         children: [
           {

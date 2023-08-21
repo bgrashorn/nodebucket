@@ -16,6 +16,7 @@ export class SecurityService {
 
   constructor(private http: HttpClient) { }
 
+  // returns the page for each employee with a correct user ID
   findEmployeeById(empId: number) {
     return this.http.get('api/employees/' + empId)
   }

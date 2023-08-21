@@ -1,0 +1,44 @@
+[
+  {
+    "empID": 1007,
+    "firstName": "Bobby",
+    "lastName": "Witt Jr.",
+    "toDo": [],
+    "done": []
+  },
+  {
+    "empID": 1008,
+    "firstName": "Freddy",
+    "lastName": "Fermin",
+    "toDo": [],
+    "done": []
+  },
+  {
+    "empID": 1009,
+    "firstName": "Vinnie",
+    "lastName": "Pasquantino",
+    "toDo": [],
+    "done": []
+  },
+  {
+    "empID": 1010,
+    "firstName": "M.J.",
+    "lastName": "Melendez",
+    "toDo": [],
+    "done": []
+  },
+  {
+    "empID": 1011,
+    "firstName": "Maikel",
+    "lastName": "Garcia",
+    "toDo": [],
+    "done": []
+  },
+  {
+    "empID": 1012,
+    "firstName": "Salvador",
+    "lastName": "Perez",
+    "toDo": [],
+    "done": []
+  }
+]
