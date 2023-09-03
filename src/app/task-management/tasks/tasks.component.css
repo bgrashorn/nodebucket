@@ -1,0 +1,11 @@
+.task-column {
+  min-height: 200px;
+}
+
+.huff-bg {
+  background-color: #EEBA35;
+}
+
+.task-hover:hover {
+  cursor: pointer;
+}

@@ -34,7 +34,7 @@
     <form [formGroup]="newTaskForm" (ngSubmit)="addTask();">
       <div class="input-group mb-3">
         <input type="text" class="form-control" formControlName="text" placeholder="Add a new task" aria-label="Add a new task" aria-describedby="btnAdd">
-        <button class="btn btn-outline-secondary" type="submit" [disabled]="!newTaskForm.valid" id="btnAdd">Add</button>
+        <button class="btn btn-outline-dark" type="submit" [disabled]="!newTaskForm.valid" id="btnAdd">Add</button>
       </div>
 
 <!-- testing -->
@@ -103,9 +103,15 @@
   <div class="col-sm-5 col-md-4 col-lg-3">
     <h4 class="text-center">ToDo</h4>
 
-    <div class="p-3 border bg-light">
+    <div class="p-3 border-black huff-bg">
 
-      <div class="container">
+      <div class="container task-column"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)"
+      >
 
         <!-- message for no todo tasks -->
         <div *ngIf="!todo || todo.length === 0">
@@ -116,10 +122,10 @@
 
         <!-- end message for no todo -->
 
-        <div *ngFor="let item of todo" class="mt-2">
-          <div class="row border bg-white">
+        <div *ngFor="let item of todo" cdkDrag class="mt-2">
+          <div class="row border bg-white task-hover">
             <div class="col-sm-6">
-              <div class="card-body">
+              <div class="card-body" style="cursor: pointer;">
                 <button
                 *ngIf="item.category.categoryName != 'other'"
                 [ngStyle]="{ 'background-color': item.category.backgroundColor }"
@@ -135,8 +141,23 @@
                 </div>
               </div>
             </div>
-          </div>
+            <!-- end col-sm-6 -->
 
+            <div class="col-sm-6 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+              <div class="card-body float-end">
+                <button class="btn" (click)="deleteTask(item._id ?? '')">
+                  <span class="material-icons">delete</span>
+                </button>
+              </div>
+            </div>
+            <!-- end delete button -->
+            <div class="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-grid gap-2 p-2">
+              <button class="btn btn-secondary" (click)="deleteTask(item._id ?? '')">
+                Delete
+              </button>
+            </div>
+          </div>
+          <!-- end row -->
         </div>
       </div>
     </div>
@@ -147,8 +168,14 @@
 <!-- done column -->
 <div class="col-sm-5 col-md-4 col-lg-3">
   <h4 class="text-center">Done</h4>
-  <div class="p-3 border bg-light">
-    <div class="container">
+  <div class="p-3 border-black huff-bg">
+    <div class="container task-column"
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    (cdkDropListDropped)="drop($event)"
+    >
 
       <!-- message for no done tasks -->
       <div *ngIf="!done || done.length === 0">
@@ -159,10 +186,10 @@
 
       <!-- end message for done -->
 
-      <div *ngFor="let item of done" class="mt-2">
-        <div class="row border bg-white">
+      <div *ngFor="let item of done" cdkDrag class="mt-2">
+        <div class="row border bg-white task-hover">
           <div class="col-sm-6">
-            <div class="card-body">
+            <div class="card-body" style="cursor: pointer;">
               <button
               *ngIf="item.category.categoryName != 'other'"
               [ngStyle]="{ 'background-color': item.category.backgroundColor }"
@@ -178,8 +205,26 @@
               </div>
             </div>
           </div>
-        </div>
 
+          <!-- end of col-sm-6 -->
+          <div class="col-sm-6 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+            <div class="card-body float-end">
+              <button class="btn" (click)="deleteTask(item._id ?? '')">
+                <span class="material-icons">delete</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- end second col-sm-6 -->
+
+          <div class="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-grid gap-2 p-2">
+            <button class="btn btn-secondary" (click)="deleteTask(item._id ?? '')">
+              Delete
+            </button>
+          </div>
+
+        </div>
+        <!-- end of row -->
       </div>
     </div>
   </div>
@@ -187,3 +232,5 @@
 <!-- end of done -->
   </div>
 </div>
+
+<br><br><br>

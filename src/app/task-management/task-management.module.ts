@@ -14,6 +14,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 
@@ -28,7 +29,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    DragDropModule
   ]
 })
 export class TaskManagementModule { }
