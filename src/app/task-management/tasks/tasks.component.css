@@ -9,3 +9,7 @@
 .task-hover:hover {
   cursor: pointer;
 }
+
+.task {
+  background-color: #FFD25F;
+}
